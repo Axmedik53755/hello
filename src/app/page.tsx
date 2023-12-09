@@ -3,21 +3,18 @@ import Link from 'next/link'
 
 
 async function getData() {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+  const res = await fetch(`${process.env.BASE_API_URL}/star`)
   return res.json()
 }
 
 export default async function Home() {
   const data = await getData()
-  console.log(data)
+
   return (
     <div>
       <div> Hello from</div>
-      {/* <div> {data}</div> */}
-      <div>
-        {data?.map((item: any) => <div key={item.id}>{item.title}</div>)}
-      </div>
-      {/* <Link className='bg-red-600' href='/ikinci'>Ikinsi sehifeye get</Link> */}
+      <div> {data}</div>
+      <Link className='bg-red-600' href='/ikinci'>Ikinsi sehifeye get</Link>
     </div >
   )
 }
