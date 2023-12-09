@@ -14,7 +14,9 @@ export default async function Home() {
     <div>
       <div> Hello from</div>
       <div> {data}</div>
-      <Link className='bg-red-600' href='/ikinci'>Ikinsi sehifeye get</Link>
+      <Link className='bg-red-600' href='/ikinci'>
+        Ikinsi sehifeye get
+      </Link>
     </div >
   )
 }
