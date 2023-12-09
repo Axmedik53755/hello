@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 async function getData() {
-    const res = await fetch(`${process.env.BASE_API_URL}/api/second`)
+    const res = await fetch(`${process.env.BASE_API_URL}/second`)
     return res.json()
 }
 const Hello = async () => {
