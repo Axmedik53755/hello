@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 
 async function getData() {
-  const res = await fetch(`${process.env.BASE_API_URL}/star`)
+  const res = await fetch(`${process.env.BASE_API_URL}/api/star`)
   return res.json()
 }
 
