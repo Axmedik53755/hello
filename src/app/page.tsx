@@ -14,6 +14,9 @@ export default async function Home() {
     <div>
       <div> Hello from</div>
       <div> {data.msg}</div>
+      <Link href={'/ikinci'}>
+        ikinci sehifeye get
+      </Link>
     </div >
   )
 }
