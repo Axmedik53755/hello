@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env:{
-        DB_HOST_NAME:process.env.DB_HOST_NAME,
-        DB_PORT_NAME:process.env.DB_PORT_NAME,
-        DB_DATABASE_NAME:process.env.DB_DATABASE_NAME,
-        DB_USER_NAME:process.env.DB_USER_NAME,
-        DB_PASSWORD:process.env.DB_PASSWORD
+       HOST_NAME:process.env.NEXT_HOST_NAME,
+      PORT_NAME:process.env.NEXT_PORT_NAME,
+     DATABASE_NAME:process.env.NEXT_DATABASE_NAME,
+    USER_NAME:process.env.NEXT_USER_NAME,
+      PASSWORD:process.env.NEXT_PASSWORD
+
     }
 }
 
