@@ -4,6 +4,10 @@ import Link from 'next/link'
 // const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
 async function getData() {
   const res = await fetch(`${process.env.BASE_API_URL}api/allData`, { cache: "no-store" })
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error("Failed to fetch data");
+    }
   return res.json()
 }
 
