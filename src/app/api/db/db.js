@@ -7,8 +7,10 @@ const db = mysql({
     database:process.env.NEXT_DATABASE_NAME,
     user:process.env.NEXT_USER_NAME,
     password:process.env.NEXT_PASSWORD
+
   },
 });
+
 export default async function executeQuery({ query, values }) {
   try {
     const results = await db.query(query, values);
