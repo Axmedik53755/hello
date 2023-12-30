@@ -35,6 +35,6 @@ export const GET = async (req:Request, res:Response) => {
     return NextResponse.json({ success: allData });
   } catch (error) {
     console.error("Database error:", error);
-    return NextResponse.json({ err: "Veritabanı hatası" });
+    return NextResponse.json({ err: "Veritabanı hatası", error }); // Hata bilgisi ekleyin
   }
 };
