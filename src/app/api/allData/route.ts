@@ -11,10 +11,9 @@ export const GET = async (req:Request, res:Response) => {
        ORDER BY all_products.createdAt DESC`,
       values: [],
     });
-
-    return NextResponse.json({ success: true,allData });
+   return NextResponse.json({ success: true,allData });
   } catch (error) {
     console.error("Database error:", error);
-    return NextResponse.json({ err: "Veritabanı hatası", error }); // Hata bilgisi ekleyin
+    return NextResponse.json({ err: true, error }); // Hata bilgisi ekleyin
   }
 };
