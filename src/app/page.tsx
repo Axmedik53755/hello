@@ -13,7 +13,7 @@ export default async function Home() {
     <div>
       <div> Hello from</div>
       <div>
-        {data.success?.length &&
+        {
           data.success?.map((item: any, index: any) => {
             return (
               <div key={index}>
