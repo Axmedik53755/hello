@@ -17,12 +17,11 @@ export default async function Home() {
           data?.data?.map((item: any, index: any) => {
             return (
               <div key={index}>
-                <div key={item.id}>{item.name}</div>
+                <div key={item.id}>{item.cityName}</div>
               </div>
             );
           })}
       </div>
-      <Link href={"/ikinci"}>ikinci sehifeye get</Link>
     </div>
   );
 }
