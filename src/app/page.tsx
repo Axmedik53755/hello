@@ -11,16 +11,13 @@ export default  function Home() {
   const [data, setData] = useState<any>([]);
 useEffect(()=>{
   const fetchData = async () => {
-    try {
+  
 
       const response = await fetch(`${process.env.BASE_API_URL}/api/allData`)
       const result = await response.json();
 
-      // Veriyi state'e kaydet
       setData(result);
-    } catch (error :any) {
-    } 
-  };
+  }
   fetchData()
 },[])
 
