@@ -13,7 +13,7 @@ useEffect(()=>{
   const fetchData = async () => {
   
 
-      const response = await fetch(`${process.env.BASE_API_URL}/api/allData`)
+      const response = await fetch(`/api/allData`)
       const result = await response.json();
 
       setData(result);
