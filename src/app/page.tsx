@@ -1,25 +1,23 @@
-'use client'
+// 'use client'
 import React, { useEffect, useState } from 'react';
-// const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
-// async function getData() {
-//   const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{cache:"no-store"});
-//   return await res.json();
-// }
+const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
+async function getData() {
+  const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{cache:"no-store"});
+  return await res.json();
+}
 
-export default  function Home() {
-  // const data = await getData();
-  const [data, setData] = useState<any>([]);
-useEffect(()=>{
-  const fetchData = async () => {
-  
+export default async function Home() {
+  const data = await getData();
+//   const [data, setData] = useState<any>([]);
+// useEffect(()=>{
+//   const fetchData = async () => {
+//       const response = await fetch(`/api/allData`)
+//       const result = await response.json();
 
-      const response = await fetch(`/api/allData`)
-      const result = await response.json();
-
-      setData(result);
-  }
-  fetchData()
-},[])
+//       setData(result);
+//   }
+//   fetchData()
+// },[])
 
 
   return (
