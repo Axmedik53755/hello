@@ -1,24 +1,27 @@
-'use client'
+// 'use client'
 import React, { useEffect, useState } from 'react';
-// const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
-
-// async function getData() {
-//   const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{cache:"no-store"});
-//   return await res.json();
-// }
-
-export default  function Home() {
-  // const data = await getData();
-  const [data, setData] = useState<any>([]);
-useEffect(()=>{
-  const fetchData = async () => {
-      const response = await fetch(`/api/allData`)
-      const result = await response.json();
-
-      setData(result);
+const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
+async function getData() {
+  const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{ next: { revalidate: 1 } });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
   }
-  fetchData()
-},[])
+  return  res.json();
+}
+
+export default async function Home() {
+  const data = await getData();
+//   const [data, setData] = useState<any>([]);
+// useEffect(()=>{
+//   const fetchData = async () => {
+//       const response = await fetch(`/api/allData`)
+//       const result = await response.json();
+
+//       setData(result);
+//   }
+//   fetchData()
+// },[])
 
 
   return (
