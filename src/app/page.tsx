@@ -1,9 +1,8 @@
 // 'use client'
 import React, { useEffect, useState } from 'react';
-// const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
-export const dynamic ='force-dynamic'
+const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
 async function getData() {
-  const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{ cache: "no-store"});
+  const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{ next: { revalidate: 15 } });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data')
