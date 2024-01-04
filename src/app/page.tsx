@@ -1,6 +1,7 @@
 // 'use client'
 import React, { useEffect, useState } from 'react';
-const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
+// const protocal = process?.env.NODE_ENV === "development" ? "http://" : "https://"
+export const dynamic ='force-dynamic'
 async function getData() {
   const res = await fetch(`${process.env.BASE_API_URL}/api/allData`,{ cache: "no-store"});
   if (!res.ok) {
